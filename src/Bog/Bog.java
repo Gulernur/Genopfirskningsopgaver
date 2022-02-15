@@ -1,5 +1,7 @@
 package Bog;
 
+import java.awt.print.Book;
+
 public class Bog {
     private String isbnNumber;
     private String title;
@@ -33,6 +35,16 @@ public class Bog {
 
     public void setYear(int year) {
         this.year = year;
+    }
+
+    @Override
+    public boolean equals(Object bookToComareWith){
+        Bog objectAsBook = (Bog) bookToComareWith;
+        if(this.isbnNumber == objectAsBook.getIsbnNumber()){
+            return true;
+        }else {
+            return  false;
+        }
     }
 
     @Override
